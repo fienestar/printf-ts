@@ -1,0 +1,70 @@
+# printf-ts
+
+pure typescript implementation of printf-family with type checking
+
+![preview](./preview.gif)
+
+## Usage
+
+```typescript
+import { printf } from 'printf-ts';
+
+// Hello printf 1 1.20
+printf("Hello %s %d %.2lf", "printf", 1, 1.2)
+```
+
+## Features
+
+### 1. vsprintf(format, args: [...]): string
+### 2. sprintf(format, ...args: [...]): string
+### 3. vprintf(format, args: [...]): number
+### 4. printf(format, ...args: [...]): number
+
+- 1 ~ 2 Returns the result as a string
+- 3 ~ 4 Writes the results to the stdout, returns the number of characters printed
+
+### Supported format specifiers
+
+see [cppreference-printf](https://en.cppreference.com/w/c/io/fprintf) for each description of specifier
+
+- flags: `+`, `-`, ` `, `#`, `0`
+- `width`, `precision`
+    - support wildcard(`*`)
+- length modifier: `h`, `hh`, `l`, `ll`, `L`, `j`, `z`, `t`
+- conversion specifier: `%c`, `%s`, `%d`, `%i`, `%u`, `%o`, `%x`, `%X`, `%f`, `%e`, `%E`, `%p`, `%%`
+
+
+### types
+
+- if argument is negative and format specifier is unsigned, it will not convert to unsigned type
+- argument is not converted to a number of specific bits
+- if origin type was unsigned, find it in signed type
+
+| specifier | argument type | description |
+| :---: | :---: | :--- |
+| `%c` | `string` | str[0] ?? '' |
+| `%c` | `number` | utf8 code point |
+| `%s` | `string` | |
+| `%n` | `null` | please use sprintf(...).length |
+
+#### integer
+> %d, %i, %u, %o, %x, %X
+- `short|int` -> `number`
+- `long|long long|intmax_t|ssize_t|ptrdiff_t` -> `bigint`
+
+#### Floating point
+> %f, %e, %E
+- `double|long double` -> `number`
+    - if value in [`infinity`, `-infinity`, `NaN`]
+        - if specifier is uppercase(`F`,`E`,`G`,`A`) => `"INF"`, `"-INF"`, `"NAN"`
+        - else => `"inf"`, `"-inf"`, `"nan"`
+
+#### Pointer
+> %p
+- `void*` -> `bigint`
+    - if value is `0n` => `"(nil)"`
+    - else => `"0x" + value.toString(16)`
+
+### Wildcard
+> \*
+- `int` -> `number`

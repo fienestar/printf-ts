@@ -1,0 +1,52 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "google",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2021,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "allow": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "no-use-before-define": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 120,
+                "tabWidth": 4,
+                "ignoreComments": true
+            }
+        ],
+        "no-irregular-whitespace": [
+            "error",
+            {
+                "skipStrings": true,
+                "skipComments": true,
+                "skipRegExps": true,
+                "skipTemplates": true
+            }
+        ],
+        "new-cap": "off",
+        "indent": [
+            "error",
+            4
+        ],
+        "require-jsdoc": "off"
+    },
+    "ignorePatterns": ["lib/", "node_modules/"]
+}

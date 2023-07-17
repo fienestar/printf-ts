@@ -1,0 +1,40 @@
+{
+  "name": "printf-ts",
+  "version": "1.0.0",
+  "description": "printf for typescript",
+  "main": "lib/index.js",
+  "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^29.6.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "lint-staged": {
+    "*.ts": [
+      "eslint . --fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/fienestar/sprintf-ts.git",
+  "author": "fienestar",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/fienestar/printf-ts/issues"
+  },
+  "homepage": "https://github.com/fienestar/printf-ts#readme"
+}
