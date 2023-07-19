@@ -8,5 +8,5 @@
         "outDir": "./lib",
         "forceConsistentCasingInFileNames": true
     },
-    "include": ["src/**/*.ts"]
+    "include": ["src/**/*.ts", "__test__/**/*.ts", "jest.config.ts"]
 }
