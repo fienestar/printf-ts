@@ -160,4 +160,6 @@ type ParseConversionSpecifier<Format extends string>
     ? [NumberOfWrittenFormatArgument, ...FormatArgument<Next>]
     : Format extends `${PointerSpecifier}${infer Next}`
     ? [PointerFormatArgument, ...FormatArgument<Next>]
-    : never;
+    : [InvalidFormatArgument, ...FormatArgument<Format>]
+
+type InvalidFormatArgument = [never];
