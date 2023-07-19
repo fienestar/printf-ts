@@ -59,15 +59,15 @@ export function parsePrecision(format: string, iter: FormatIterator, args: any[]
 
     iter.value += 1;
 
-    // If the value of this argument is negative, it is ignored.
-    if (format[iter.value] === '-') {
-        iter.value += 1;
-        parseWidth(format, iter, args);
-        return null;
-    }
-
     // If neither a number nor * is used, the precision is taken as zero
-    return parseWidth(format, iter, args) ?? 0;
+    const width = parseWidth(format, iter, args) ?? 0;
+
+    // If the value of this argument is negative, it is ignored.
+    if (width < 0) {
+        return null;
+    } else {
+        return width;
+    }
 }
 
 export function parseLengthModifier(format: string, iter: FormatIterator): string {
