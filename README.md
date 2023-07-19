@@ -31,7 +31,7 @@ see [cppreference-printf](https://en.cppreference.com/w/c/io/fprintf) for each d
 - `width`, `precision`
     - support wildcard(`*`)
 - length modifier: `h`, `hh`, `l`, `ll`, `L`, `j`, `z`, `t`
-- conversion specifier: `%c`, `%s`, `%d`, `%i`, `%u`, `%o`, `%x`, `%X`, `%f`, `%e`, `%E`, `%p`, `%%`
+- conversion specifier: `%c`, `%s`, `%d`, `%i`, `%u`, `%o`, `%x`, `%X`, `%f`, `%F`, `%e`, `%E`, `%p`, `%%`
 
 
 ### types
@@ -53,7 +53,7 @@ see [cppreference-printf](https://en.cppreference.com/w/c/io/fprintf) for each d
 - `long|long long|intmax_t|ssize_t|ptrdiff_t` -> `bigint`
 
 #### Floating point
-> %f, %e, %E
+> %f, %F, %e, %E
 - `double|long double` -> `number`
     - if value in [`infinity`, `-infinity`, `NaN`]
         - if specifier is uppercase(`F`,`E`,`G`,`A`) => `"INF"`, `"-INF"`, `"NAN"`
