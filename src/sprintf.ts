@@ -13,7 +13,7 @@ function pad(prefixContent: PrefixContent, width: number, flags: FormatFlags) {
     const [prefix, content] = prefixContent;
     const padding = Math.max(0, width - prefix.length - content.length);
     if (flags['-']) {
-        return prefix + padding + ' '.repeat(padding);
+        return prefix + content + ' '.repeat(padding);
     } else if (flags['0']) { // It is ignored if - flag is present.
         return prefix + '0'.repeat(padding) + content;
     } else {
