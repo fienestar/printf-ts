@@ -11,15 +11,5 @@ export function getPrefix(n: number | bigint, flags: FormatFlags): string {
         } else {
             return '';
         }
-    } else {
-        return '-';
-    }
-}
-
-export function applyPrecision(n: string, precision: number): string {
-    if (precision === 0 && n === '0') {
-        return '';
-    } else {
-        return '0'.repeat(Math.max(0, precision - n.length)) + n;
     }
 }

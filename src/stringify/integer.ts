@@ -1,5 +1,13 @@
 import {FormatFlags, PrefixContent} from '../impl-types';
-import {applyPrecision, getPrefix} from './numeric';
+import {getPrefix} from './numeric';
+
+export function applyIntegerPrecision(n: string, precision: number): string {
+    if (precision === 0 && n === '0') {
+        return '';
+    } else {
+        return '0'.repeat(Math.max(0, precision - n.length)) + n;
+    }
+}
 
 export default function stringifyInteger(
     conversionSpecifier: string,
@@ -56,7 +64,7 @@ export default function stringifyInteger(
         prefix = '';
         convertedValue = '(nil)';
     } else {
-        convertedValue = applyPrecision(convertedValue, precision);
+        convertedValue = applyIntegerPrecision(convertedValue, precision);
     }
 
     return [prefix, convertedValue];
