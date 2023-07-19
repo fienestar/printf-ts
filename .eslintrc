@@ -21,8 +21,9 @@
     ],
     "rules": {
         "@typescript-eslint/no-explicit-any": "off",
-        "allow": "off",
         "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/require-await": "off",
+        "allow": "off",
         "no-use-before-define": "off",
         "max-len": [
             "error",
