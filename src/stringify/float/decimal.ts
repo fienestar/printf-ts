@@ -10,7 +10,7 @@ export default function stringifyDecimalNotation(
     flags: FormatFlags,
 ): PrefixContent {
     if (args.length === 0) {
-        throw new Error('argument for decimal notation(%f,%F,%a,%A) not exists');
+        throw new Error('argument for decimal notation(%f,%F) not exists');
     }
 
     const n = args.shift() as (DoubleFormatArgument | LongDoubleFormatArgument);
