@@ -4,7 +4,7 @@ import {expectSprintf} from '../utils';
 // writes literal %. The full conversion specification must be %%.
 
 describe('%%', () => {
-    test('%%', async () => {
+    test('%%', () => {
         expectSprintf('A%%B')
             .toEqual('A%B');
 

@@ -27,5 +27,12 @@ describe('%d, %i', () => {
     test('if flag # and both value and precision are 0, results results "0"', () => {
         expectSprintf('%#.0o', 0)
             .toEqual('0');
+        expectSprintf('%.0o', 0)
+            .toEqual('');
+    });
+
+    test('string argument', () => {
+        expectSprintf('%hho', '0')
+            .toEqual('60');
     });
 });
