@@ -1,5 +1,5 @@
 import {describe, test} from '@jest/globals';
-import {expectSprintf} from '../utils';
+import {expectSprintf, expectSprintfRejects} from '../utils';
 
 // . followed by integer number or *, or neither that specifies precision of the conversion
 
@@ -22,5 +22,11 @@ describe('precision', () => {
     test('if neither a number nor * is used for the precision, it is taken as zero', () => {
         expectSprintf('%.f', 1)
             .toEqual('1');
+    });
+
+    test('too big precision', async () => {
+        const tooBigWidth = 1 + '0'.repeat(100);
+        await expectSprintfRejects(`%.${tooBigWidth}}d`, 1)
+            .toEqual(new Error(`${tooBigWidth} is too big or not an integer`));
     });
 });
