@@ -1,7 +1,7 @@
-import {FormatFlags, PrefixContent} from '../impl-types';
-import {DoubleFormatArgument, LongDoubleFormatArgument} from '../types';
+import {FormatFlags, PrefixContent} from '../../impl-types';
+import {DoubleFormatArgument, LongDoubleFormatArgument} from '../../types';
 import stringifyNonFiniteValue from './nonfinite';
-import {getPrefix} from './numeric';
+import {getPrefix} from '../numeric';
 
 export default function stringifyDecimalExponentNotation(
     isUpper: boolean,

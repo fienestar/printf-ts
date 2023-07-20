@@ -1,4 +1,4 @@
-import {FormatFlags} from '../impl-types';
+import {FormatFlags} from '../../impl-types';
 
 export default function stringifyNonFiniteValue(
     isUpper: boolean,

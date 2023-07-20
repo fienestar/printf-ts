@@ -1,10 +1,10 @@
 import {FormatFlags, PrefixContent} from './impl-types';
 import {parseFlags, parseLengthModifier, parsePrecision, parseWidth} from './parser';
 import stringifyChar from './stringify/char';
-import stringifyDecimalAutoNotation from './stringify/decimal-auto-notation';
-import stringifyDecimalExponentNotation from './stringify/decimal-exponent-notation';
-import stringifyDecimalNotation from './stringify/decimal-notation';
-import stringifyHexadecimalExponentNotation from './stringify/hexadecimal-exponent-notation';
+import stringifyDecimalAutoNotation from './stringify/float/decimal-auto';
+import stringifyDecimalExponentNotation from './stringify/float/decimal-exponent';
+import stringifyDecimalNotation from './stringify/float/decimal';
+import stringifyHexadecimalExponentNotation from './stringify/float/hexadecimal-exponent';
 import stringifyInteger from './stringify/integer';
 import stringifyString from './stringify/string';
 import {FormatArgument} from './types';

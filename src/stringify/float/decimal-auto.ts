@@ -1,4 +1,4 @@
-import {FormatFlags, PrefixContent} from '../impl-types';
+import {FormatFlags, PrefixContent} from '../../impl-types';
 // %g, %G
 export default function stringifyDecimalAutoNotation(
     _isUpper: boolean,

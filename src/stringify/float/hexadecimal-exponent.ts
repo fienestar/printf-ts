@@ -1,4 +1,4 @@
-import {FormatFlags, PrefixContent} from '../impl-types';
+import {FormatFlags, PrefixContent} from '../../impl-types';
 
 // %a, %A
 export default function stringifyHexadecimalExponentNotation(
