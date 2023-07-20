@@ -13,7 +13,7 @@ export default function stringifyDecimalExponentNotation(
         throw new Error('argument for decimal exponent notation(%e,%E,%a,%A) not exists');
     }
 
-    const n = args.shift() as (DoubleFormatArgument );
+    const n = args.shift() as (DoubleFormatArgument | LongDoubleFormatArgument);
     let content: string|null = stringifyNonFiniteValue(isUpper, n, flags);
 
     if (content === null) {

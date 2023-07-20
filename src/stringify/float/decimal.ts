@@ -13,7 +13,7 @@ export default function stringifyDecimalNotation(
         throw new Error('argument for decimal notation(%f,%F,%a,%A) not exists');
     }
 
-    const n = args.shift() as DoubleFormatArgument;
+    const n = args.shift() as (DoubleFormatArgument | LongDoubleFormatArgument);
     let content: string|null = stringifyNonFiniteValue(isUpper, n, flags);
 
     if (content === null) {
