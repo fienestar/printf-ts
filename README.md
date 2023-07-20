@@ -58,7 +58,7 @@ see [cppreference-printf](https://en.cppreference.com/w/c/io/fprintf) for each d
     - if value in [`infinity`, `-infinity`, `NaN`]
         - if specifier is uppercase(`F`,`E`,`G`,`A`) => `"INF"`, `"-INF"`, `"NAN"`
         - else => `"inf"`, `"-inf"`, `"nan"`
-- there is no negative nan
+- NaN always treated as a positive value
 
 #### Pointer
 > %p
