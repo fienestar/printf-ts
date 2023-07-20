@@ -84,6 +84,10 @@ export default function sprintf<Format extends string>(format: Format, ...args: 
                 break;
             }
             case 'n': { // the number of characters written
+                if (width !== 0 || precision !== null || Object.values(flags).some((v) => v)) {
+                    throw new Error('%n cannot contain width, precision or flags');
+                }
+
                 args.shift(); // null
                 break;
             }
