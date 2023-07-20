@@ -44,6 +44,7 @@ export default function stringifyInteger(
     } else if ('xXp'.includes(conversionSpecifier)) {
         convertedValue = arg.toString(16);
         if (isUpper) {
+            prefix = prefix.toUpperCase();
             convertedValue = convertedValue.toUpperCase();
         }
     }
