@@ -50,7 +50,7 @@ export default function sprintf<Format extends string>(format: Format, ...args: 
                 break;
             }
             case 's': {
-                prefixContent = stringifyString(args);
+                prefixContent = stringifyString(args, precision);
                 break;
             }
             case 'd':
