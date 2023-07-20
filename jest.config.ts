@@ -7,6 +7,7 @@ const config: Config = {
         '^.+\\.(js|jsx)$': 'babel-jest',
     },
     testPathIgnorePatterns: ['/node_modules/', '/lib/'],
+    coveragePathIgnorePatterns: ['/__test__/', '/node_modules/', '/lib/'],
 };
 
 export default config;
