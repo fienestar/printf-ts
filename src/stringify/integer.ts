@@ -55,8 +55,8 @@ export default function stringifyInteger(
 
     precision ??= 1;
 
-    if (flags['#'] && conversionSpecifier === 'o' && convertedValue !== '0') {
-        // In the alternative implementation precision is increased if necessary, to write one leading zero. In that case if both the converted value and the precision are ​0​, single ​0​ is written.
+    if (flags['#'] && conversionSpecifier === 'o') {
+        // In the alternative implementation precision is increased if necessary, to write one leading zero. In that case if both the converted value and the precision are 0, single 0 is written.
         prefix += '0';
     }
 
