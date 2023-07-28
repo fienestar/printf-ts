@@ -41,6 +41,11 @@ export default function sprintf<Format extends string>(format: Format, ...args: 
             parseLengthModifier(format, i);
 
             const conversionSpecifier = format[i.value++];
+
+            if (conversionSpecifier === undefined) {
+                throw new Error('missing conversion specifier');
+            }
+
             let prefixContent: PrefixContent = ['', ''];
             const isUpper = conversionSpecifier.toUpperCase() === conversionSpecifier;
 
