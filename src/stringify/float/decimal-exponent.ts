@@ -21,7 +21,7 @@ export default function stringifyDecimalExponentNotation(
         // The exponent contains at least two digits, more digits are used only if necessary.
         // 1e+0 -> 1e+00
         if (content.split('e')[1].length === 2) {
-            content += '0';
+            content = content.slice(0, -1) + '0' + content.at(-1);
         }
     }
 

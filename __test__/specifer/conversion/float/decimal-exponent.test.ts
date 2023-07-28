@@ -17,6 +17,8 @@ describe('%f, %F', () => {
     test('exponent contains at least two digits, more digits are used only if necessary', () => {
         expectSprintf('%e', 1e0)
             .toEqual('1.000000e+00');
+        expectSprintf('%e', 1e1)
+            .toEqual('1.000000e+01');
         expectSprintf('%e', 1e99)
             .toEqual('1.000000e+99');
         expectSprintf('%e', 1e200)
