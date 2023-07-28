@@ -73,11 +73,6 @@ export default function sprintf<Format extends string>(format: Format, ...args: 
                 prefixContent = stringifyDecimalExponentNotation(isUpper, precision, args, flags);
                 break;
             }
-            case 'a':
-            case 'A': {
-                prefixContent = stringifyHexadecimalExponentNotation(isUpper, precision, args, flags);
-                break;
-            }
             case 'g':
             case 'G': { // decimal or decimal exponent notation depending on the value and the precision
                 prefixContent = stringifyDecimalAutoNotation(isUpper, precision, args, flags);
@@ -91,6 +86,9 @@ export default function sprintf<Format extends string>(format: Format, ...args: 
                 args.shift(); // null
                 break;
             }
+
+            default:
+                throw new Error(`invalid conversion specifier: ${conversionSpecifier}`);
             }
 
             output += pad(prefixContent, width, flags);

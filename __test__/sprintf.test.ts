@@ -25,6 +25,11 @@ describe('sprintf', () => {
             .toEqual(new Error('argument for * not exists'));
     });
 
+    test('fail on invalid conversion specifier', async () => {
+        await expectSprintfRejects('%y')
+            .toEqual(new Error('invalid conversion specifier: y'));
+    });
+
     test('simple test', async () => {
         expectSprintf('%010d %x %p', 1, 40, 0n)
             .toEqual(`0000000001 28 (nil)`);
