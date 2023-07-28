@@ -15,6 +15,12 @@ describe('sprintf', () => {
         await expectSprintfRejects('%f')
             .toEqual(new Error('argument for decimal fixed notation(%f,%F) not exists'));
 
+        await expectSprintfRejects('%e')
+            .toEqual(new Error('argument for decimal exponent notation(%e,%E) not exists'));
+
+        await expectSprintfRejects('%g')
+            .toEqual(new Error('argument for decimal general notation(%g,%G) not exists'));
+
         await expectSprintfRejects('%*.*d', 1)
             .toEqual(new Error('argument for * not exists'));
     });

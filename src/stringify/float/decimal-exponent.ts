@@ -10,7 +10,7 @@ export default function stringifyDecimalExponentNotation(
     flags: FormatFlags,
 ): PrefixContent {
     if (args.length === 0) {
-        throw new Error('argument for decimal exponent notation(%e,%E,%a,%A) not exists');
+        throw new Error('argument for decimal exponent notation(%e,%E) not exists');
     }
 
     const n = args.shift() as (DoubleFormatArgument | LongDoubleFormatArgument);
