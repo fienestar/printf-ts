@@ -1,9 +1,9 @@
 import {FormatFlags, PrefixContent} from './impl-types';
 import {parseFlags, parseLengthModifier, parsePrecision, parseWidth} from './parser';
 import stringifyChar from './stringify/char';
-import stringifyDecimalAutoNotation from './stringify/float/decimal-auto';
+import stringifyDecimalAutoNotation from './stringify/float/decimal-general';
 import stringifyDecimalExponentNotation from './stringify/float/decimal-exponent';
-import stringifyDecimalNotation from './stringify/float/decimal';
+import stringifyDecimalNotation from './stringify/float/decimal-fixed';
 import stringifyHexadecimalExponentNotation from './stringify/float/hexadecimal-exponent';
 import stringifyInteger from './stringify/integer';
 import stringifyString from './stringify/string';

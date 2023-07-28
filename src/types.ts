@@ -85,7 +85,7 @@ export type FormatFlag = '-'|'+'|' '|'#'|'0';
 export type SignedIntegerSpecifier = 'd'|'i';
 export type UnsignedIntegerSpecifier = 'o'|'x'|'X'|'u';
 export type IntegerSpecifier = SignedIntegerSpecifier | UnsignedIntegerSpecifier;
-export type FloatSpecifier = 'f'|'F'|'e'|'E'; // |"a"|"A"|"g"|"G"; a and g is not implemented
+export type FloatSpecifier = 'f'|'F'|'e'|'E'|'g'|'G'; // |"a"|"A"; a is not implemented
 
 // LengthModifier + ConversoinSpecifier
 export type PersentSpecifier = '%';

@@ -13,7 +13,7 @@ describe('sprintf', () => {
             .toEqual(new Error('argument for character(%c) not exists'));
 
         await expectSprintfRejects('%f')
-            .toEqual(new Error('argument for decimal notation(%f,%F) not exists'));
+            .toEqual(new Error('argument for decimal fixed notation(%f,%F) not exists'));
 
         await expectSprintfRejects('%*.*d', 1)
             .toEqual(new Error('argument for * not exists'));

@@ -3,14 +3,14 @@ import {AnyFormatArgument, DoubleFormatArgument, LongDoubleFormatArgument} from 
 import stringifyNonFiniteValue from './nonfinite';
 import {getPrefix} from '../numeric';
 
-export default function stringifyDecimalNotation(
+export default function stringifyDecimalFixedNotation(
     isUpper: boolean,
     precision: number|null,
     args: AnyFormatArgument[],
     flags: FormatFlags,
 ): PrefixContent {
     if (args.length === 0) {
-        throw new Error('argument for decimal notation(%f,%F) not exists');
+        throw new Error('argument for decimal fixed notation(%f,%F) not exists');
     }
 
     const n = args.shift() as (DoubleFormatArgument | LongDoubleFormatArgument);
