@@ -1,5 +1,7 @@
 # printf-ts
 
+[![codecov](https://codecov.io/gh/fienestar/printf-ts/branch/main/graph/badge.svg?token=Y8GR64UX10)](https://codecov.io/gh/fienestar/printf-ts)
+
 pure typescript implementation of printf-family with type checking
 
 ![preview](./preview.gif)
