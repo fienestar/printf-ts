@@ -1,7 +1,7 @@
 import {PrefixContent} from '../impl-types';
-import {CharFormatArgument} from '../types';
+import {AnyFormatArgument, CharFormatArgument} from '../types';
 
-export default function stringifyChar(args: any[]): PrefixContent {
+export default function stringifyChar(args: AnyFormatArgument[]): PrefixContent {
     if (args.length === 0) {
         throw new Error('argument for character(%c) not exists');
     }

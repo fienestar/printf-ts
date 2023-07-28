@@ -7,7 +7,7 @@ describe('printf-family', () => {
 
     test('printf returns number of characters transmitted to the output stream', async () => {
         const log = console.log;
-        console.log = (...data: any[]) => {
+        console.log = (...data: [string]) => {
             expect(data).toEqual([sprintf(format, ...args)]);
         };
 
@@ -19,7 +19,7 @@ describe('printf-family', () => {
 
     test('vprintf returns number of characters transmitted to the output stream', async () => {
         const log = console.log;
-        console.log = (...data: any[]) => {
+        console.log = (...data: [string]) => {
             expect(data).toEqual([sprintf(format, ...args)]);
         };
 

@@ -1,4 +1,5 @@
 import {FormatFlags, PrefixContent} from '../impl-types';
+import {AnyFormatArgument} from '../types';
 import {getPrefix} from './numeric';
 
 export function applyIntegerPrecision(n: string, precision: number): string {
@@ -13,7 +14,7 @@ export default function stringifyInteger(
     conversionSpecifier: string,
     isUpper: boolean,
     precision: number|null,
-    args: any[],
+    args: AnyFormatArgument[],
     flags: FormatFlags,
 ): PrefixContent {
     if (args.length === 0) {

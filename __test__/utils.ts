@@ -1,8 +1,8 @@
-import {FormatArgument, sprintf} from '../src';
+import {AnyFormatArgument, FormatArgument, sprintf} from '../src';
 
 export function expectSprintfRejects<Format extends string>(
     format: Format,
-    ...args: any[] // need to test invalid format or argument
+    ...args: AnyFormatArgument[] // need to test invalid format or argument
 ) {
     return expect((async () => {
         return sprintf(format, ...args as FormatArgument<Format>);

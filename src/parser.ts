@@ -1,5 +1,5 @@
 import {FormatFlags, FormatIterator} from './impl-types';
-import {WildcardFormatArgument} from './types';
+import {AnyFormatArgument, WildcardFormatArgument} from './types';
 
 function isDigit(char: string): boolean {
     return char >= '0' && char <= '9';
@@ -24,7 +24,7 @@ export function parseFlags(format: string, iter: FormatIterator): FormatFlags {
     return flags;
 }
 
-export function parseWidth(format: string, iter: FormatIterator, args: any[]): number | null {
+export function parseWidth(format: string, iter: FormatIterator, args: AnyFormatArgument[]): number | null {
     let i = iter.value;
     let width = '';
 
@@ -52,7 +52,7 @@ export function parseWidth(format: string, iter: FormatIterator, args: any[]): n
     return parseInt(width);
 }
 
-export function parsePrecision(format: string, iter: FormatIterator, args: any[]): number | null {
+export function parsePrecision(format: string, iter: FormatIterator, args: AnyFormatArgument[]): number | null {
     if (format[iter.value] !== '.') {
         return null;
     } // use default precision

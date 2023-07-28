@@ -62,6 +62,21 @@ export type PointerFormatArgument = bigint;
 */
 export type WildcardFormatArgument = number;
 
+export type AnyFormatArgument = CharFormatArgument
+    | StringFormatArgument
+    | ShortFormatArgument
+    | IntFormatArgument
+    | LongFormatArgument
+    | LLongFormatArgument
+    | IntMaxFormatArgument
+    | SizeFormatArgument
+    | PointerDifferenceFormatArgument
+    | DoubleFormatArgument
+    | LongDoubleFormatArgument
+    | NumberOfWrittenFormatArgument
+    | PointerFormatArgument
+    | WildcardFormatArgument;
+
 // ----------------------------------------------
 
 export type Digit = '0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'8'|'9';

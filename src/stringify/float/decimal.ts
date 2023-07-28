@@ -1,12 +1,12 @@
 import {FormatFlags, PrefixContent} from '../../impl-types';
-import {DoubleFormatArgument, LongDoubleFormatArgument} from '../../types';
+import {AnyFormatArgument, DoubleFormatArgument, LongDoubleFormatArgument} from '../../types';
 import stringifyNonFiniteValue from './nonfinite';
 import {getPrefix} from '../numeric';
 
 export default function stringifyDecimalNotation(
     isUpper: boolean,
     precision: number|null,
-    args: any[],
+    args: AnyFormatArgument[],
     flags: FormatFlags,
 ): PrefixContent {
     if (args.length === 0) {
