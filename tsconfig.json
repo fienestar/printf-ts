@@ -1,12 +1,4 @@
 {
-    "compilerOptions": {
-        "target": "ES2022",
-        "module": "CommonJS",
-        "strict": true,
-        "declaration": true,
-        "esModuleInterop": true,
-        "outDir": "./lib",
-        "forceConsistentCasingInFileNames": true
-    },
-    "include": ["src/**/*.ts", "__test__/**/*.ts", "jest.config.ts"]
+    "extends": "./compilerOption.tsconfig.json",
+    "include": ["src/**/*.ts"]
 }
