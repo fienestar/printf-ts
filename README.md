@@ -21,9 +21,12 @@ printf("Hello %s %d %.2lf", "printf", 1, 1.2)
 ### 2. sprintf(format, ...args: [...]): string
 ### 3. vprintf(format, args: [...]): number
 ### 4. printf(format, ...args: [...]): number
+### 5. vprintfln(format, args: [...]): number
+### 6. printfln(format, ...args: [...]): number
 
 - 1 ~ 2 Returns the result as a string
 - 3 ~ 4 Writes the results to the stdout, returns the number of characters printed
+- 5 ~ 6 Writes the results to the stdout, returns the number of characters printed. if nodejs, append `\n` to the end(not affect to return value)
 
 ### Supported format specifiers
 
