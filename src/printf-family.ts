@@ -8,7 +8,13 @@ export function vsprintf<Format extends string>(format: Format, args: FormatArgu
 
 export function vprintf<Format extends string>(format: Format, args: FormatArgument<Format>): number {
     const text = vsprintf(format, args);
-    console.log(text);
+
+    if (typeof process !== 'undefined' && process?.stdout?.write !== undefined) {
+        process.stdout.write(text);
+    } else {
+        console.log(text);
+    }
+
     return text.length;
 }
 
