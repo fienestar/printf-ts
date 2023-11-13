@@ -18,8 +18,18 @@ export function vprintf<Format extends string>(format: Format, args: FormatArgum
     return text.length;
 }
 
+export function vprintfln<Format extends string>(format: Format, args: FormatArgument<Format>): number {
+    const text = vsprintf(format, args);
+    console.log(text);
+    return text.length;
+}
+
 export function printf<Format extends string>(format: Format, ...args: FormatArgument<Format>): number {
     return vprintf(format, args);
+}
+
+export function printfln<Format extends string>(format: Format, ...args: FormatArgument<Format>): number {
+    return vprintfln(format, args);
 }
 
 export {default as sprintf} from './sprintf';
