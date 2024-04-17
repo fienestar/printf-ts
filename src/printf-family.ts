@@ -1,9 +1,13 @@
 
 import sprintf from './sprintf';
+import {FormatResult} from './sprintf-result-type';
 import {FormatArgument} from './types';
 
-export function vsprintf<Format extends string>(format: Format, args: FormatArgument<Format>): string {
-    return sprintf(format, ...args);
+export function vsprintf<
+    Format extends string,
+    Arguments extends FormatArgument<Format>
+>(format: Format, args: Arguments): FormatResult<Format, Arguments> {
+    return sprintf(format, ...args) as FormatResult<Format, Arguments>;
 }
 
 export function vprintf<Format extends string>(format: Format, args: FormatArgument<Format>): number {

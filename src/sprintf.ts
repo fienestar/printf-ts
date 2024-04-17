@@ -8,6 +8,7 @@ import stringifyHexadecimalExponentNotation from './stringify/float/hexadecimal-
 import stringifyInteger from './stringify/integer';
 import stringifyString from './stringify/string';
 import {FormatArgument} from './types';
+import {FormatResult} from './sprintf-result-type';
 
 function pad(prefixContent: PrefixContent, width: number, flags: FormatFlags) {
     const [prefix, content] = prefixContent;
@@ -21,7 +22,9 @@ function pad(prefixContent: PrefixContent, width: number, flags: FormatFlags) {
     }
 }
 
-export default function sprintf<Format extends string>(format: Format, ...args: FormatArgument<Format>): string {
+export default function sprintf<
+    Format extends string, Arguments extends FormatArgument<Format>
+>(format: Format, ...args: Arguments): FormatResult<Format, Arguments> {
     let output = '';
     for (let i={value: 0}; i.value!=format.length;) {
         if (format[i.value] !== '%') {
@@ -99,5 +102,5 @@ export default function sprintf<Format extends string>(format: Format, ...args: 
             output += pad(prefixContent, width, flags);
         }
     }
-    return output;
+    return output as FormatResult<Format, Arguments>;
 }
