@@ -56,4 +56,24 @@ describe('%g, %G', () => {
         expectSprintf('%#g', 1.2)
             .toEqual('1.20000');
     });
+
+    test('corner case', () => {
+        expectSprintf('%.1g', 999.9)
+            .toEqual('1e+03');
+
+        expectSprintf('%.2g', 999.9)
+            .toEqual('1e+03');
+
+        expectSprintf('%.3g', 999.9)
+            .toEqual('1e+03');
+
+        expectSprintf('%.4g', 999.9)
+            .toEqual('999.9');
+
+        expectSprintf('%.5g', 999.9)
+            .toEqual('999.9');
+
+        expectSprintf('%.6g', 999.9)
+            .toEqual('999.9');
+    });
 });
